@@ -63,6 +63,9 @@ RCT_EXPORT_METHOD(setUrl:(NSString *)urlString){
 RCT_EXPORT_METHOD(play) {
     if(_player) [_player play];
 }
+RCT_EXPORT_METHOD(remove) {
+    if(_player)  [self killPlayer];
+}
 
 RCT_EXPORT_METHOD(pause) {
     if(_player) [_player pause];

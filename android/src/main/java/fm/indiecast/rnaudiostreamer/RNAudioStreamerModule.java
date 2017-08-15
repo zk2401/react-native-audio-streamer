@@ -87,6 +87,14 @@ public class RNAudioStreamerModule extends ReactContextBaseJavaModule implements
     @ReactMethod public void play() {
         if(player != null) player.setPlayWhenReady(true);
     }
+       @ReactMethod public void remove() {
+                   if (player != null){
+                            player.stop();
+                            player = null;
+                            status = "STOPPED";
+                            this.sendStatusEvent();
+                        }
+            }
 
     @ReactMethod public void pause() {
         if(player != null) player.setPlayWhenReady(false);
